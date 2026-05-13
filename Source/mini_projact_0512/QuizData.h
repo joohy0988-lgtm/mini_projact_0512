@@ -1,15 +1,19 @@
-﻿// Fill out your copyright notice in the Description page of Project Settings.
-
-#pragma once
+﻿#pragma once
 
 #include "CoreMinimal.h"
+#include "QuizData.generated.h"
 
-/**
- * 
- */
-class MINI_PROJACT_0512_API QuizData
+USTRUCT(BlueprintType)
+struct FQuizData : public FTableRowBase
 {
-public:
-	QuizData();
-	~QuizData();
+	GENERATED_BODY()
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Quiz")
+	FString Question;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Quiz")
+	bool bCorrectAnswer = false;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Quiz")
+	bool bIsUsed = false;
 };
